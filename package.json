@@ -1,0 +1,73 @@
+{
+  "name": "react-progress-timer",
+  "version": "1.0.0",
+  "description": "A react component to calculate the time to complete a task and desplay it user friendly.",
+  "main": "dist/index.js",
+  "types": "src/types.ts",
+  "private": false,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --mode development --open --hot",
+    "prepublishOnly": "npm run transpile",
+    "transpile": "babel src -d dist --copy-files  --extensions '.ts,.tsx'",
+    "demo": "gh-pages -d dist",
+    "lint": "tslint src/**/*.ts{,x} --fix",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json",
+    "prettier": "prettier --check src/**/*.ts{,x}"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whizsid/react-progress-timer.git"
+  },
+  "keywords": [
+    "loading",
+    "progress",
+    "time",
+    "remain",
+    "completing",
+    "react",
+    "calculate",
+    "automatically",
+    "countdown",
+    "percentage"
+  ],
+  "author": "WhizSid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/whizsid/react-designer-component/issues"
+  },
+  "homepage": "http://whizsid.github.io/react-designer-component",
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@babel/preset-typescript": "^7.6.0",
+    "@types/react": "^16.9.3",
+    "@types/react-dom": "^16.9.1",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-inline-react-svg": "^1.1.0",
+    "gh-pages": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.18.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "tslint": "^5.20.0",
+    "tslint-config-airbnb": "^5.11.2",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-react": "^4.1.0",
+    "typescript": "^3.6.3",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
+  },
+  "dependencies": {
+  },
+  "peerDependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}

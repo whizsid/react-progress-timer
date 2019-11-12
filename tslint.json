@@ -1,0 +1,23 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint-config-airbnb",
+        "tslint:latest",
+        "tslint-react",
+        "tslint-config-prettier",
+        "tslint-plugin-prettier"
+    ],
+    "jsRules": {},
+    "rules": {
+        "ordered-imports": true,
+        "no-unused-variable": true,
+        "no-submodule-imports": false,
+        "no-implicit-dependencies": false,
+        "no-console": false,
+        "member-access": true,
+        "only-arrow-functions": true,
+        "radix": false,
+        "prettier": true
+    },
+    "rulesDirectory": []
+}
