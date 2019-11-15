@@ -5,7 +5,7 @@ interface IProps {
 	initialText?: string;
 	completedText?: string;
 	format?: string;
-	formater?: (unixTime: number) => string;
+	formatter?: (unixTime: number) => string;
 	calculateByAverage?: boolean;
 	decreaseTime?: boolean;
 }
