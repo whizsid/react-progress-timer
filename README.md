@@ -1,6 +1,6 @@
 <p align="center">
 	<a href="https://github.com/whizsid/react-progress-timer">
-			<img src="https://i.imgur.com/dYifMd6.png" />
+			<img src="https://i.imgur.com/9FlfaSt.png" />
 	</a>
 </p>
 
