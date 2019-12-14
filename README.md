@@ -55,8 +55,8 @@ Please provide following props. Props that marked with leading (*) are required.
 | Prop | Description | Type |
 | ------------- |:-------------| :-----|
 | *percentage | Current percentage of the progress | number|
-| initialText | Text to desplay when initializing. Default is `Initializing` | string |
-| completedText | Text to desplay after completed the task. Default is `Completed` | string |
+| initialText | Text to display when initializing. Default is `Initializing` | string |
+| completedText | Text to display after completed the task. Default is `Completed` | string |
 | decreaseTime | With this prop time will automatically decreasing even percentage not changed. By default this feature is enabled. | boolean |
 | calculateByAverage | Calculating time by average speed. By default calculating the speed by current speed | boolean|
 | format | Format to display the remaining time. Default:- `Completing in {value} {unit}`| string|
