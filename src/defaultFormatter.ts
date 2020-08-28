@@ -1,4 +1,4 @@
-export default (time: number, format: string): string => {
+export default (time: number, percentage: number, format: string): string => {
   let modTime = Math.ceil(time / 1000);
   let unit = "second(s)";
 
@@ -19,5 +19,7 @@ export default (time: number, format: string): string => {
     unit = "minute(s)";
   }
 
-  return format.replace("{value}", modTime.toString()).replace("{unit}", unit);
+  return format.replace("{value}", modTime.toString())
+      .replace("{unit}", unit)
+      .replace("{percentage}", Math.round(percentage).toString())
 };

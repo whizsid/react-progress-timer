@@ -59,8 +59,9 @@ Please provide following props. Props that marked with leading (*) are required.
 | completedText | Text to display after completed the task. Default is `Completed` | string |
 | decreaseTime | With this prop time will automatically decreasing even percentage not changed. By default this feature is enabled. | boolean |
 | calculateByAverage | Calculating time by average speed. By default calculating the speed by current speed | boolean|
-| format | Format to display the remaining time. Default:- `Completing in {value} {unit}`| string|
+| format | Format to display the remaining time. Default:- `Completing in {value} {unit}`. You can also use the `{percentage}` placeholder. | string|
 | formatter | You can use your own formatter to format your string. Supply time in nano second to first parameter. | (time:number)=>string |
+| rollingAverageWindowSize | When calculating by current speed, this specifies how many past values will be considered as "current". Default is 1 | number
 
 ## Developing
 

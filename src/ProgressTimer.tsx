@@ -9,6 +9,7 @@ interface IProps {
   formatter?: (unixTime: number) => string;
   calculateByAverage?: boolean;
   decreaseTime?: boolean;
+  rollingAverageWindowSize?: number;
 }
 
 interface IPercentage {
@@ -28,7 +29,8 @@ export default class ProgressTimer extends React.Component<IProps, IState> {
     completedText: "Completed",
     decreaseTime: true,
     format: "Completing in {value} {unit}",
-    initialText: "Initializing"
+    initialText: "Initializing",
+    rollingAverageWindowSize: 1
   };
 
   constructor(props: IProps) {
@@ -72,7 +74,8 @@ export default class ProgressTimer extends React.Component<IProps, IState> {
       calculateByAverage,
       formatter,
       decreaseTime,
-      format
+      format,
+      rollingAverageWindowSize
     } = this.props;
     const { percentages, startedTime } = this.state;
 
@@ -84,7 +87,7 @@ export default class ProgressTimer extends React.Component<IProps, IState> {
       return completedText;
     }
 
-    let estTime = 0;
+    let estTime;
 
     const lastPercentage = percentages[percentages.length - 1];
 
@@ -95,16 +98,25 @@ export default class ProgressTimer extends React.Component<IProps, IState> {
 
       estTime = timePerChanged * (100 - lastPercentage.percentage);
     } else {
-      const beforeLastPercentage = percentages[percentages.length - 2];
+      const windowBeginningIndex = Math.max(
+        0,
+        percentages.length - (rollingAverageWindowSize || 1) - 1
+      );
 
-      const timeDif = lastPercentage.time - beforeLastPercentage.time;
+      const windowBeginningPercentage = percentages[windowBeginningIndex];
+
+      const timeDif = lastPercentage.time - windowBeginningPercentage.time;
 
       const changed =
-        lastPercentage.percentage - beforeLastPercentage.percentage;
+        lastPercentage.percentage - windowBeginningPercentage.percentage;
 
       const timePerChanged = timeDif / changed;
 
       estTime = timePerChanged * (100 - percentage);
+    }
+
+    if ( isNaN( estTime ) ) {
+      return initialText;
     }
 
     if (decreaseTime) {
@@ -122,7 +134,7 @@ export default class ProgressTimer extends React.Component<IProps, IState> {
     }
 
     if (format) {
-      return defaultFormatter(estTime, format);
+      return defaultFormatter(estTime, percentage, format);
     }
 
     return null;
