@@ -115,7 +115,7 @@ export default class ProgressTimer extends React.Component<IProps, IState> {
       estTime = timePerChanged * (100 - percentage);
     }
 
-    if ( isNaN( estTime ) ) {
+    if (isNaN(estTime)) {
       return initialText;
     }
 

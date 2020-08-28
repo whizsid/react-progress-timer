@@ -19,7 +19,8 @@ export default (time: number, percentage: number, format: string): string => {
     unit = "minute(s)";
   }
 
-  return format.replace("{value}", modTime.toString())
-      .replace("{unit}", unit)
-      .replace("{percentage}", Math.round(percentage).toString())
+  return format
+    .replace("{value}", modTime.toString())
+    .replace("{unit}", unit)
+    .replace("{percentage}", Math.round(percentage).toString());
 };
