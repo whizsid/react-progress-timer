@@ -1,26 +1,31 @@
-export default (time: number, percentage: number, format: string): string => {
-  let modTime = Math.ceil(time / 1000);
+export default (
+  milliseconds: number,
+  percentage: number,
+  format: string
+): string => {
+  const seconds = Math.ceil(milliseconds / 1000);
   let unit = "second(s)";
+  let timeValue = seconds;
 
-  if (modTime > 12 * 30 * 24 * 60 * 60) {
-    modTime = Math.ceil((modTime / 12) * 30 * 24 * 60 * 60);
+  if (seconds > 12 * 30 * 24 * 60 * 60) {
+    timeValue = timeValue / (12 * 30 * 24 * 60 * 60);
     unit = "year(s)";
-  } else if (modTime > 30 * 24 * 60 * 60) {
-    modTime = Math.ceil((modTime / 30) * 24 * 60 * 60);
+  } else if (seconds > 30 * 24 * 60 * 60) {
+    timeValue = timeValue / (30 * 24 * 60 * 60);
     unit = "month(s)";
-  } else if (modTime > 24 * 60 * 60) {
-    modTime = Math.ceil((modTime / 24) * 60 * 60);
+  } else if (seconds > 24 * 60 * 60) {
+    timeValue = timeValue / (24 * 60 * 60);
     unit = "day(s)";
-  } else if (modTime > 60 * 60) {
-    modTime = Math.ceil((modTime / 60) * 60);
+  } else if (seconds > 60 * 60) {
+    timeValue = timeValue / (60 * 60);
     unit = "hour(s)";
-  } else if (modTime > 60) {
-    modTime = Math.ceil(modTime / 60);
+  } else if (seconds > 60) {
+    timeValue = timeValue / 60;
     unit = "minute(s)";
   }
 
   return format
-    .replace("{value}", modTime.toString())
+    .replace("{value}", Math.ceil(timeValue).toString())
     .replace("{unit}", unit)
     .replace("{percentage}", Math.round(percentage).toString());
 };

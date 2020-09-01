@@ -37,14 +37,14 @@
   },
   "homepage": "http://whizsid.github.io/react-progress-timer",
   "devDependencies": {
-    "@babel/cli": "^7.6.2",
-    "@babel/core": "^7.6.4",
+    "@babel/cli": "^7.11.5",
+    "@babel/core": "^7.11.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
-    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.6.3",
     "@babel/preset-typescript": "^7.6.0",
-    "@types/react": "^16.9.3",
+    "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.1",
     "babel-loader": "^8.0.6",
     "babel-plugin-inline-react-svg": "^1.1.0",
@@ -63,7 +63,6 @@
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.2"
   },
-  "dependencies": {},
   "peerDependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
