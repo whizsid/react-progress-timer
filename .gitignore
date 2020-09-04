@@ -2,3 +2,5 @@
 yarn.lock
 /dist
 .idea
+# perhaps reconsider tracking the lock file with git as it's the recommended practice
+package-lock.json
