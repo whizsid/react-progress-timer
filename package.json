@@ -1,6 +1,6 @@
 {
   "name": "react-progress-timer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This react component will automatically calculate the time to complete a progress bar by percentage changing speed.",
   "main": "dist/index.js",
   "private": false,
